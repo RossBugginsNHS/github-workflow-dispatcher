@@ -14,7 +14,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 
-FROM public.ecr.aws/lambda/nodejs:22@sha256:52a37f71e957669f2cbdc10de0bed24be30b4a84821d36ed8a1e57b037a4cb1a AS runtime
+FROM public.ecr.aws/lambda/nodejs:24@sha256:27779bce860b7af8568949d0a83dace18783595d1218c26db9083f815ed129cb AS runtime
 WORKDIR /var/task
 ENV NODE_ENV=production
 COPY package.json ./
